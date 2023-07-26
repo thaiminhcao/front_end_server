@@ -27,13 +27,13 @@ const SignUpForm = () => {
   for (let year = currentYear; year >= 1900; year--) {
     years.push(year);
   }
-  const [phoneNumber, setPhone] = useState<number|undefined>();
+  const [phone_number, setPhone] = useState<number | undefined>();
   const [isError, setIsError] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const navigate = useNavigate();
   const handleSignUp = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!username || !password || !email || !gender || !dob || !phoneNumber) { // Kiểm tra trường đã được nhập hay chưa
+    if (!username || !password || !email || !gender || !dob || !phone_number) { // Kiểm tra trường đã được nhập hay chưa
       setIsError(true);
       return;
     }
@@ -41,7 +41,7 @@ const SignUpForm = () => {
       username,
       password,
       email,
-      phoneNumber,
+      phone_number,
       gender: gender ? gender.value : null,
       dob: dobTimestamp
     };
@@ -56,23 +56,17 @@ const SignUpForm = () => {
       .then(response => response.json())
       .then(data => {
         // Xử lý kết quả từ API tại đây
-        if (data.message === "user exist") {
-          toast.success('User already exists', {
+        if (data.message === "Email already exist") {
+          toast.success('Email already exists', {
             position: toast.POSITION.TOP_RIGHT
           });
           setIsSuccess(false);
         } else {
-
-
           toast.success('Registration successful', {
-            position: toast.POSITION.TOP_RIGHT
+            position: toast.POSITION.TOP_RIGHT,
           });
           setIsSuccess(true);
-          if (isSuccess) {
-            setTimeout(() => {
-              navigate('/');
-            }, 3000);
-          }
+          navigate('/');
         }
         console.log(data.message);
       })
@@ -84,6 +78,8 @@ const SignUpForm = () => {
         });
         setIsSuccess(false);
       });
+
+
   };
 
   return (
@@ -127,10 +123,10 @@ const SignUpForm = () => {
           />
         </div>
         <div>
-          <label htmlFor="phoneNumber" className="block text-gray-700 font-medium mb-2 ">Phone Number</label>
+          <label htmlFor="phone_number" className="block text-gray-700 font-medium mb-2 ">Phone Number</label>
           <input
-            type="phoneNumber"
-            value={phoneNumber}
+            type="phone_number"
+            value={phone_number}
             onChange={e => setPhone(Number(e.target.value))}
             placeholder='Enter your phone number'
             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
