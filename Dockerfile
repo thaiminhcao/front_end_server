@@ -1,5 +1,5 @@
-# Sử dụng image node:14-alpine làm image cơ sở
-FROM node:14-alpine
+# Sử dụng image node:18-alpine làm image cơ sở
+FROM node:18-alpine
 
 # Thiết lập thư mục làm việc
 WORKDIR /app
