@@ -29,4 +29,4 @@ RUN yarn global add serve
 EXPOSE 5000
 
 # Chạy lệnh serve để phục vụ ứng dụng
-CMD ["serve", "-s", "dist", "-l", "5000"]
+CMD ["serve", "-s", "dist", "-l", "tcp://0.0.0.0:5000"]
