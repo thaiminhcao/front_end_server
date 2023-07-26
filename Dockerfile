@@ -4,9 +4,6 @@ FROM node:14-alpine
 # Thiết lập thư mục làm việc
 WORKDIR /app
 
-# Khởi tạo cấu hình cho TailwindCSS
-RUN npx tailwindcss init -p
-
 # Sao chép package.json và yarn.lock vào thư mục làm việc
 COPY package.json yarn.lock ./
 
@@ -19,6 +16,8 @@ RUN yarn install --frozen-lockfile
 # Sao chép tất cả các file còn lại vào thư mục làm việc
 COPY . .
 
+# Khởi tạo cấu hình cho TailwindCSS
+RUN npx tailwindcss init -p
 
 # Build ứng dụng
 RUN yarn build
