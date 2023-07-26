@@ -7,6 +7,9 @@ WORKDIR /app
 # Sao chép package.json và yarn.lock vào thư mục làm việc
 COPY package.json yarn.lock ./
 
+# Thêm quyền thực thi cho lệnh yarn
+RUN chmod +x $(which yarn)
+
 # Cài đặt các dependency
 RUN yarn install --frozen-lockfile
 
