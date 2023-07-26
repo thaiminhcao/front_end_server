@@ -9,7 +9,7 @@ const Index = () => {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
   const [isError, setIsError] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
+  const [, setIsSuccess] = useState(false);
   const handleSignIn = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!password || !email) { // Kiểm tra trường đã được nhập hay chưa
