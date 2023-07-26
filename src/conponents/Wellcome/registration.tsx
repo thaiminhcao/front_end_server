@@ -29,7 +29,7 @@ const SignUpForm = () => {
   }
   const [phone_number, setPhone] = useState<number | undefined>();
   const [isError, setIsError] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
+  const [, setIsSuccess] = useState(false);
   const navigate = useNavigate();
   const handleSignUp = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
