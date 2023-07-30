@@ -2,7 +2,7 @@
 import Layout from '../dashboard';
 import { useEffect, useState } from 'react';
 const Index = () => {
-    const [data, setData] = useState([]);
+    const [_, setData] = useState([]);
 
     useEffect(() => {
         fetch('/your-api-url')
