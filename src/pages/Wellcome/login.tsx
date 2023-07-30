@@ -34,7 +34,7 @@ const Index = () => {
 
           console.log(data.message);
 
-          navigate('/dashboard');
+          navigate('/dashboard/home');
         } else {
           toast.error('Login failed', {
             position: toast.POSITION.TOP_RIGHT,
@@ -46,7 +46,7 @@ const Index = () => {
       .catch(error => {
         // Xử lý lỗi tại đây
         console.error(error);
-        toast.success('Server is currently busy. Please try again later', {
+        toast.error('Server is currently busy. Please try again later', {
           position: toast.POSITION.TOP_RIGHT
         });
         setIsSuccess(false);

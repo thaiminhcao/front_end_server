@@ -7,3 +7,5 @@
 	# yarn add -D @types/react-datepicker
 	# yarn add react-router-dom 
 	# yarn add react-toastify
+	# yarn add @types/react-modal
+	# yarn add @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons @fortawesome/react-fontawesome

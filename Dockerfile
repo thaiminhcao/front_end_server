@@ -26,7 +26,7 @@ RUN yarn build
 RUN yarn global add serve
 
 # Khai báo cổng mà ứng dụng sẽ sử dụng
-EXPOSE 5000
+EXPOSE 8080
 
 # Chạy lệnh serve để phục vụ ứng dụng
-CMD ["serve", "-s", "dist", "-l", "tcp://0.0.0.0:5000"]
+CMD ["serve", "-s", "dist", "-l", "tcp://0.0.0.0:8080"]
