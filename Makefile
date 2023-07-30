@@ -9,3 +9,7 @@
 	# yarn add react-toastify
 	# yarn add @types/react-modal
 	# yarn add @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons @fortawesome/react-fontawesome
+
+
+
+yarn install

@@ -107,18 +107,18 @@ const ProfilePage = () => {
                         onChange={handleInputChange}
                     />
                 </div>
-                <div className="mb-4">
-                    <label className="block mb-2">Avatar</label>
-                    {profile.avatar && (
-                        <img
-                            src={profile.avatar}
-                            alt=""
-                            className="w-full rounded mb-2 object-cover object-center"
-                            style={{ height: '200px' }}
-                        />
-                    )}
-                    <input type="file" onChange={handleFileChange} />
-                </div>
+            </div>
+            <div className="mb-4">
+                <label className="block mb-2">Avatar</label>
+                {profile.avatar && (
+                    <img
+                        src={profile.avatar}
+                        alt=""
+                        className="w-full rounded mb-2 object-cover object-center"
+                        style={{ height: '200px' }}
+                    />
+                )}
+                <input type="file" onChange={handleFileChange} />
             </div>
         </div>
 
