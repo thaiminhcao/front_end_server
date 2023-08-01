@@ -51,11 +51,6 @@ const Index = () => {
         });
         setIsSuccess(false);
       });
-
-
-
-
-
   };
 
   return (

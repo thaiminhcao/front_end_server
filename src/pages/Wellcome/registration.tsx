@@ -27,13 +27,13 @@ const SignUpForm = () => {
   for (let year = currentYear; year >= 1900; year--) {
     years.push(year);
   }
-  const [phone_number, setPhone] = useState<number | undefined>();
+  const [phoneNumber, setPhone] = useState<number | undefined>();
   const [isError, setIsError] = useState(false);
   const [, setIsSuccess] = useState(false);
   const navigate = useNavigate();
   const handleSignUp = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!username || !password || !email || !gender || !dob || !phone_number) { // Kiểm tra trường đã được nhập hay chưa
+    if (!username || !password || !email || !gender || !dob || !phoneNumber) { // Kiểm tra trường đã được nhập hay chưa
       setIsError(true);
       return;
     }
@@ -41,7 +41,7 @@ const SignUpForm = () => {
       username,
       password,
       email,
-      phone_number,
+      phoneNumber,
       gender: gender ? gender.value : null,
       dob: dobTimestamp
     };
@@ -123,10 +123,10 @@ const SignUpForm = () => {
           />
         </div>
         <div>
-          <label htmlFor="phone_number" className="block text-gray-700 font-medium mb-2 ">Phone Number</label>
+          <label htmlFor="phoneNumber" className="block text-gray-700 font-medium mb-2 ">Phone Number</label>
           <input
-            type="phone_number"
-            value={phone_number}
+            type="phoneNumber"
+            value={phoneNumber}
             onChange={e => setPhone(Number(e.target.value))}
             placeholder='Enter your phone number'
             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
