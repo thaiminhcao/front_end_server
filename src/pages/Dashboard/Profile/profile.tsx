@@ -50,10 +50,10 @@ const Index = () => {
         }
     };
 
-    const handleSubmit = () => {
-        // call the updateUserInfo function here to update the user info when the form is submitted
-        updateUserInfo(profile);
-    }
+    // const handleSubmit = () => {
+    //     // call the updateUserInfo function here to update the user info when the form is submitted
+    //     updateUserInfo(profile);
+    // }
 
     const fetchUserInfo = async (userId: number) => {
         try {
@@ -81,18 +81,18 @@ const Index = () => {
     }
 
 
-    const updateUserInfo = async (profileData: Profile) => {
-        const response = await fetch(`http://localhost:8080/user/updateinfo`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(profileData)
-        });
-        const data = await response.json();
-        // handle the data here
-        return data
-    }
+    // const updateUserInfo = async (profileData: Profile) => {
+    //     const response = await fetch(`http://localhost:8080/user/updateinfo`, {
+    //         method: 'POST',
+    //         headers: {
+    //             'Content-Type': 'application/json'
+    //         },
+    //         body: JSON.stringify(profileData)
+    //     });
+    //     const data = await response.json();
+    //     // handle the data here
+    //     return data
+    // }
 
 
     return (
